@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Scha Link Management 🌸</title>
+  <title>Scha Link Management</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Lora (Serif Standard) -->
+  <!-- Google Font: Plus Jakarta Sans (Sangat jelas & pro) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -26,30 +26,21 @@
       theme: {
         extend: {
           colors: {
-            softblue: {
-              50: '#f0f7ff',
-              100: '#e0f0fe',
-              200: '#bae2fd',
-              300: '#7ccbfd',
-              400: '#36b3f9',
-              500: '#0c99eb',
-              600: '#007ac9',
-              700: '#0162a4',
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#38bdf8',
+              600: '#0284c7',
+              700: '#0369a1',
             },
-            softpink: {
-              50: '#fff0f5',
-              100: '#ffe3ed',
-              200: '#fcc7dc',
-              300: '#f99ec1',
-              400: '#f4699c',
-              500: '#e93b77',
-              600: '#d51f5c',
-              700: '#b31245',
+            accent: {
+              400: '#f472b6',
+              500: '#ec4899',
+              600: '#db2777',
             }
           },
           fontFamily: {
-            sans: ['Lora', 'serif'],
-            serif: ['Lora', 'serif']
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -57,58 +48,67 @@
   </script>
 
   <style>
-    /* Global Font Enforcement - Everything strictly Lora */
-    * {
-      font-family: 'Lora', serif !important;
-    }
-
+    /* Global Typography & Font Setup */
     body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
-      background: linear-gradient(135deg, #e0f0fe 0%, #ffe3ed 100%);
-      background-attachment: fixed;
+      min-height: 100vh;
     }
 
-    .dark body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b2e 100%);
-      background-attachment: fixed;
-    }
-
-    /* Soft Blue & Pink Pattern Overlay */
-    .bg-soft-pattern {
+    /* Pastel Blue-Pink Gradient Background dengan Subtle Mesh Pattern */
+    .bg-pastel-mesh {
+      background-color: #e0f2fe;
       background-image: 
-        radial-gradient(rgba(186, 226, 253, 0.4) 1.5px, transparent 1.5px), 
-        radial-gradient(rgba(252, 199, 220, 0.4) 1.5px, transparent 1.5px);
-      background-size: 30px 30px;
-      background-position: 0 0, 15px 15px;
+        radial-gradient(at 0% 0%, rgba(224, 242, 254, 0.9) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(251, 207, 232, 0.9) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(244, 114, 182, 0.4) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(186, 230, 253, 0.8) 0px, transparent 50%),
+        radial-gradient(rgba(100, 116, 139, 0.08) 1.5px, transparent 1.5px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+      background-attachment: fixed;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(224, 240, 254, 0.5);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(244, 105, 156, 0.4);
-      border-radius: 10px;
+    .dark .bg-pastel-mesh {
+      background-color: #0f172a;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(15, 23, 42, 0.9) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(30, 27, 75, 0.8) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(88, 28, 135, 0.4) 0px, transparent 50%),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+      background-attachment: fixed;
     }
 
-    /* Glassmorphic card effect */
+    /* Glassmorphism Styling */
     .glass-card {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
     }
     .dark .glass-card {
-      background: rgba(30, 27, 46, 0.82);
+      background: rgba(30, 41, 59, 0.75);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    /* Soft Glow Effects */
     .soft-shadow {
-      box-shadow: 0 8px 25px -5px rgba(244, 105, 156, 0.15), 0 8px 10px -6px rgba(54, 179, 249, 0.1);
+      box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1), 0 8px 10px -6px rgba(236, 72, 153, 0.1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(14, 165, 233, 0.3);
+      border-radius: 10px;
     }
 
     .pb-safe-nav {
@@ -116,188 +116,182 @@
     }
   </style>
 </head>
-<body class="bg-soft-pattern text-gray-800 dark:text-gray-100 min-h-screen flex flex-col transition-colors duration-300">
+<body class="bg-pastel-mesh text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 antialiased">
 
-  <!-- TOP HEADER / BRAND BAR -->
-  <header class="sticky top-0 z-30 glass-card border-b border-softpink-200/60 dark:border-softpink-900/30 px-4 py-3 shadow-sm flex items-center justify-between">
-    <div class="flex items-center gap-2.5">
-      <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-softblue-400 to-softpink-400 text-white flex items-center justify-center shadow-sm">
-        <i class="fa-solid fa-link text-sm"></i>
+  <!-- HEADER BAR -->
+  <header class="sticky top-0 z-30 glass-card border-b border-white/50 dark:border-slate-700/50 px-5 py-3.5 shadow-sm flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-pink-400 text-white flex items-center justify-center shadow-md shadow-pink-500/20">
+        <i class="fa-solid fa-link text-lg"></i>
       </div>
       <div>
-        <h1 class="text-lg text-gray-800 dark:text-gray-100 font-bold leading-none tracking-wide">Scha Link</h1>
-        <p class="text-[10px] text-softpink-600 dark:text-softpink-300 font-medium tracking-wider uppercase mt-0.5">Management Portal</p>
+        <h1 class="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-none">Scha Link</h1>
+        <p class="text-[11px] text-sky-600 dark:text-sky-400 font-semibold tracking-wide uppercase mt-0.5">Management Pro</p>
       </div>
     </div>
     <div class="flex items-center gap-2">
-      <!-- Cart Indicator -->
-      <button onclick="switchTab('cart')" class="relative p-2 rounded-xl bg-softblue-50 dark:bg-gray-800 text-softblue-600 dark:text-softblue-300 hover:bg-softblue-100 transition">
+      <button onclick="switchTab('cart')" class="relative p-2.5 rounded-xl bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-white shadow-sm transition">
         <i class="fa-solid fa-cart-shopping text-sm"></i>
-        <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-softpink-500 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center border border-white dark:border-gray-900 shadow">0</span>
+        <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900 shadow-sm">0</span>
       </button>
-      <!-- Sync Button -->
-      <button onclick="manualSyncFirebase()" title="Simpan ke Cloud Firebase" class="p-2 rounded-xl bg-softpink-50 dark:bg-gray-800 text-softpink-600 dark:text-softpink-300 hover:bg-softpink-100 transition">
+      <button onclick="manualSyncFirebase()" title="Sync Cloud Firebase" class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-white shadow-sm transition">
         <i class="fa-solid fa-cloud-arrow-up text-sm"></i>
       </button>
     </div>
   </header>
 
-  <!-- MAIN CONTENT CONTAINER -->
-  <main class="flex-grow max-w-lg w-full mx-auto p-4 pb-safe-nav">
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-lg w-full mx-auto p-4 pb-safe-nav space-y-4">
     
     <!-- Toast Notification Banner -->
-    <div id="toast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 hidden bg-gray-900/90 text-white text-xs font-semibold px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 animate__animated animate__fadeInDown backdrop-blur-md border border-softpink-300/30">
-      <i id="toastIcon" class="fa-solid fa-circle-check text-softblue-300"></i>
-      <span id="toastMsg">Mesej Notifikasi</span>
+    <div id="toast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 hidden bg-slate-900/90 dark:bg-slate-800/95 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 animate__animated animate__fadeInDown backdrop-blur-md border border-white/10">
+      <i id="toastIcon" class="fa-solid fa-circle-check text-sky-400 text-sm"></i>
+      <span id="toastMsg">Mesej Toast</span>
     </div>
 
-    <!-- ==================== TAB 1: HOME / DASHBOARD ==================== -->
+    <!-- ==================== TAB 1: DASHBOARD ==================== -->
     <section id="tab-home" class="tab-content space-y-4">
-      <!-- Welcome Banner -->
-      <div class="glass-card rounded-3xl p-5 border border-white/60 dark:border-gray-800 soft-shadow relative overflow-hidden">
-        <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-1.5">
-            <span class="text-xl">🌸</span>
-            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Selamat Datang, Scha</h2>
+      <div class="glass-card rounded-3xl p-5 shadow-sm border border-white/60 dark:border-slate-700/50 relative overflow-hidden soft-shadow">
+        <div class="relative z-10 space-y-1">
+          <div class="inline-flex items-center gap-2 bg-sky-100/80 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+            <span>Selamat Datang</span>
           </div>
-          <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">Pengurusan bahan worksheet dan pautan Google Drive dengan mudah, kemas dan bersistematik.</p>
+          <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Scha Management Panel</h2>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">Sistem pengurusan pautan Google Drive dan bahan lembaran kerja secara sistematik dan pantas.</p>
         </div>
       </div>
 
-      <!-- Metrics Grid -->
+      <!-- Quick Metrics Grid -->
       <div class="grid grid-cols-2 gap-3">
-        <div onclick="switchTab('folders')" class="glass-card p-4 rounded-2xl border border-white/60 dark:border-gray-800 shadow-sm flex items-center gap-3 cursor-pointer hover:border-softblue-300 transition active:scale-95">
-          <div class="w-10 h-10 rounded-xl bg-softblue-100 dark:bg-softblue-900/40 text-softblue-600 dark:text-softblue-300 flex items-center justify-center text-lg shrink-0">
-            📁
+        <div onclick="switchTab('folders')" class="glass-card p-4 rounded-2xl shadow-sm flex items-center gap-3 cursor-pointer hover:scale-[1.02] active:scale-95 transition border border-white/60 dark:border-slate-700/50">
+          <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-folder"></i>
           </div>
           <div>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400">Jumlah Folder</p>
-            <h3 id="dashTotalFolders" class="text-lg font-bold text-gray-800 dark:text-white">0</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Folder</p>
+            <h3 id="dashTotalFolders" class="text-lg font-bold text-slate-800 dark:text-white">0</h3>
           </div>
         </div>
 
-        <div onclick="switchTab('products')" class="glass-card p-4 rounded-2xl border border-white/60 dark:border-gray-800 shadow-sm flex items-center gap-3 cursor-pointer hover:border-softpink-300 transition active:scale-95">
-          <div class="w-10 h-10 rounded-xl bg-softpink-100 dark:bg-softpink-900/40 text-softpink-600 dark:text-softpink-300 flex items-center justify-center text-lg shrink-0">
-            📦
+        <div onclick="switchTab('products')" class="glass-card p-4 rounded-2xl shadow-sm flex items-center gap-3 cursor-pointer hover:scale-[1.02] active:scale-95 transition border border-white/60 dark:border-slate-700/50">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-box"></i>
           </div>
           <div>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400">Jumlah Produk</p>
-            <h3 id="dashTotalProducts" class="text-lg font-bold text-gray-800 dark:text-white">0</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Produk</p>
+            <h3 id="dashTotalProducts" class="text-lg font-bold text-slate-800 dark:text-white">0</h3>
           </div>
         </div>
 
-        <div onclick="switchTab('products')" class="glass-card p-4 rounded-2xl border border-white/60 dark:border-gray-800 shadow-sm flex items-center gap-3 cursor-pointer hover:border-softblue-300 transition active:scale-95">
-          <div class="w-10 h-10 rounded-xl bg-softblue-100 dark:bg-softblue-900/40 text-softblue-600 dark:text-softblue-300 flex items-center justify-center text-lg shrink-0">
-            🔗
+        <div onclick="switchTab('products')" class="glass-card p-4 rounded-2xl shadow-sm flex items-center gap-3 cursor-pointer hover:scale-[1.02] active:scale-95 transition border border-white/60 dark:border-slate-700/50">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-link"></i>
           </div>
           <div>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400">Jumlah Pautan</p>
-            <h3 id="dashTotalLinks" class="text-lg font-bold text-gray-800 dark:text-white">0</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Jumlah Pautan</p>
+            <h3 id="dashTotalLinks" class="text-lg font-bold text-slate-800 dark:text-white">0</h3>
           </div>
         </div>
 
-        <div onclick="switchTab('cart')" class="glass-card p-4 rounded-2xl border border-white/60 dark:border-gray-800 shadow-sm flex items-center gap-3 cursor-pointer hover:border-softpink-300 transition active:scale-95">
-          <div class="w-10 h-10 rounded-xl bg-softpink-100 dark:bg-softpink-900/40 text-softpink-600 dark:text-softpink-300 flex items-center justify-center text-lg shrink-0">
-            🛒
+        <div onclick="switchTab('cart')" class="glass-card p-4 rounded-2xl shadow-sm flex items-center gap-3 cursor-pointer hover:scale-[1.02] active:scale-95 transition border border-white/60 dark:border-slate-700/50">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-cart-shopping"></i>
           </div>
           <div>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400">Item Cart</p>
-            <h3 id="dashTotalCart" class="text-lg font-bold text-gray-800 dark:text-white">0</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Troli Cart</p>
+            <h3 id="dashTotalCart" class="text-lg font-bold text-slate-800 dark:text-white">0</h3>
           </div>
         </div>
       </div>
 
-      <!-- Navigation Shortcuts -->
-      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-gray-800 shadow-sm space-y-3">
-        <h3 class="text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2 uppercase tracking-wider">
-          <i class="fa-solid fa-bolt text-softblue-500"></i> Jalan Pintas
+      <!-- Quick Shortcuts -->
+      <div class="glass-card rounded-2xl p-4 shadow-sm border border-white/60 dark:border-slate-700/50 space-y-3">
+        <h3 class="text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-bolt text-amber-500"></i> Akses Pantas
         </h3>
         <div class="grid grid-cols-3 gap-2">
-          <button onclick="switchTab('folders')" class="py-2.5 px-2 bg-softblue-50 dark:bg-gray-800 hover:bg-softblue-100 text-softblue-700 dark:text-softblue-300 rounded-xl font-medium text-xs flex flex-col items-center justify-center gap-1 transition active:scale-95">
-            <span class="text-base">📁</span> Folder
+          <button onclick="switchTab('folders')" class="py-3 px-2 bg-white/60 dark:bg-slate-800/60 hover:bg-white text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs flex flex-col items-center justify-center gap-1.5 transition active:scale-95 border border-white/40 dark:border-slate-700">
+            <i class="fa-solid fa-folder-open text-sky-500 text-base"></i> Folder
           </button>
-          <button onclick="switchTab('products')" class="py-2.5 px-2 bg-softpink-50 dark:bg-gray-800 hover:bg-softpink-100 text-softpink-700 dark:text-softpink-300 rounded-xl font-medium text-xs flex flex-col items-center justify-center gap-1 transition active:scale-95">
-            <span class="text-base">📚</span> Produk
+          <button onclick="switchTab('products')" class="py-3 px-2 bg-white/60 dark:bg-slate-800/60 hover:bg-white text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs flex flex-col items-center justify-center gap-1.5 transition active:scale-95 border border-white/40 dark:border-slate-700">
+            <i class="fa-solid fa-boxes-stacked text-pink-500 text-base"></i> Produk
           </button>
-          <button onclick="switchTab('cart')" class="py-2.5 px-2 bg-softblue-50 dark:bg-gray-800 hover:bg-softblue-100 text-softblue-700 dark:text-softblue-300 rounded-xl font-medium text-xs flex flex-col items-center justify-center gap-1 transition active:scale-95">
-            <span class="text-base">🛒</span> Cart
+          <button onclick="switchTab('cart')" class="py-3 px-2 bg-white/60 dark:bg-slate-800/60 hover:bg-white text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs flex flex-col items-center justify-center gap-1.5 transition active:scale-95 border border-white/40 dark:border-slate-700">
+            <i class="fa-solid fa-cart-shopping text-rose-500 text-base"></i> Cart
           </button>
         </div>
       </div>
     </section>
 
     <!-- ==================== TAB 2: FOLDER MANAGEMENT ==================== -->
-    <section id="tab-folders" class="tab-content space-y-4 hidden">
+    <section id="tab-folders" class="tab-content space-y-3 hidden">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">Pengurusan Folder</h2>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Kategorikan bahan mengikut kumpulan</p>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Pengurusan Folder</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Susun kategori bahan mengikut kumpulan</p>
         </div>
-        <button onclick="openFolderModal()" class="bg-softblue-500 hover:bg-softblue-600 text-white font-medium text-xs py-2 px-3 rounded-xl shadow-sm flex items-center gap-1.5 active:scale-95 transition">
-          <i class="fa-solid fa-plus text-xs"></i> Tambah
+        <button onclick="openFolderModal()" class="bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 text-white font-semibold text-xs py-2.5 px-3.5 rounded-xl shadow-sm flex items-center gap-1.5 active:scale-95 transition">
+          <i class="fa-solid fa-plus text-xs"></i> Tambah Folder
         </button>
       </div>
 
-      <!-- Folder List Container -->
-      <div id="folderList" class="space-y-2.5">
+      <div id="folderList" class="space-y-2">
         <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- ==================== TAB 3: PRODUCTS MANAGEMENT ==================== -->
-    <section id="tab-products" class="tab-content space-y-4 hidden">
+    <section id="tab-products" class="tab-content space-y-3 hidden">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">Senarai Produk</h2>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Cari dan urus pautan worksheet</p>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Senarai Produk</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Urus dan cari pautan worksheet</p>
         </div>
-        <button onclick="openProductModal()" class="bg-softpink-500 hover:bg-softpink-600 text-white font-medium text-xs py-2 px-3 rounded-xl shadow-sm flex items-center gap-1.5 active:scale-95 transition">
-          <i class="fa-solid fa-plus text-xs"></i> Tambah
+        <button onclick="openProductModal()" class="bg-slate-900 dark:bg-pink-500 hover:bg-slate-800 text-white font-semibold text-xs py-2.5 px-3.5 rounded-xl shadow-sm flex items-center gap-1.5 active:scale-95 transition">
+          <i class="fa-solid fa-plus text-xs"></i> Tambah Produk
         </button>
       </div>
 
       <!-- Search Bar -->
       <div class="relative">
-        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
         <input type="text" id="searchInput" oninput="handleSearchInput(this.value)" placeholder="Cari nama produk..." 
-               class="w-full pl-9 pr-8 py-2 rounded-xl glass-card border border-white/60 dark:border-gray-800 text-xs focus:outline-none focus:ring-2 focus:ring-softblue-400 placeholder:text-gray-400">
-        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+               class="w-full pl-9 pr-8 py-2.5 rounded-xl glass-card border border-white/60 dark:border-slate-700/50 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-400 text-slate-800 dark:text-slate-100 placeholder:text-slate-400">
+        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
           <i class="fa-solid fa-xmark text-xs"></i>
         </button>
       </div>
 
-      <!-- Dynamic Filters -->
+      <!-- Filters -->
       <div class="grid grid-cols-2 gap-2">
         <div>
-          <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Filter Folder</label>
-          <select id="filterFolderSelect" onchange="onFilterFolderChange(this.value)" class="w-full glass-card border border-white/60 dark:border-gray-800 rounded-xl px-2.5 py-2 text-xs text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-softblue-400">
-            <!-- Options populated by JS -->
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1">Tapis Folder</label>
+          <select id="filterFolderSelect" onchange="onFilterFolderChange(this.value)" class="w-full glass-card border border-white/60 dark:border-slate-700/50 rounded-xl px-2.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400">
           </select>
         </div>
         <div>
-          <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Filter Produk</label>
-          <select id="filterProductSelect" onchange="onFilterProductChange(this.value)" class="w-full glass-card border border-white/60 dark:border-gray-800 rounded-xl px-2.5 py-2 text-xs text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-softblue-400">
-            <!-- Options populated by JS -->
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1">Tapis Produk</label>
+          <select id="filterProductSelect" onchange="onFilterProductChange(this.value)" class="w-full glass-card border border-white/60 dark:border-slate-700/50 rounded-xl px-2.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400">
           </select>
         </div>
       </div>
 
-      <!-- Product List Grid -->
-      <div id="productList" class="space-y-3">
+      <!-- Product List -->
+      <div id="productList" class="space-y-2.5">
         <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- ==================== TAB 4: CART ==================== -->
-    <section id="tab-cart" class="tab-content space-y-4 hidden">
+    <section id="tab-cart" class="tab-content space-y-3 hidden">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
-            🛒 Cart Pautan <span id="cartCountBadge" class="text-xs bg-softpink-500 text-white px-2 py-0.5 rounded-full font-normal">(0)</span>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+            Troli Pautan <span id="cartCountBadge" class="text-xs bg-pink-500 text-white font-bold px-2 py-0.5 rounded-full">(0)</span>
           </h2>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Kumpulkan pautan untuk hantar ke pelanggan</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Kumpulkan pautan pilihan untuk dihantar</p>
         </div>
-        <button onclick="confirmClearCart()" class="text-xs text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 py-1 px-2.5 rounded-xl border border-rose-200 dark:border-rose-900/50 flex items-center gap-1 active:scale-95 transition">
+        <button onclick="confirmClearCart()" class="text-xs text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 font-semibold py-1.5 px-2.5 rounded-xl border border-rose-200 dark:border-rose-900/40 flex items-center gap-1 transition">
           <i class="fa-solid fa-trash-can"></i> Kosongkan
         </button>
       </div>
@@ -307,120 +301,118 @@
         <!-- Rendered via JS -->
       </div>
 
-      <!-- Message Builder & Preview Box -->
-      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-gray-800 space-y-3 shadow-sm">
-        <div class="flex items-center justify-between border-b border-gray-200/60 dark:border-gray-800 pb-2">
-          <h3 class="text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-            <i class="fa-solid fa-envelope-open-text text-softblue-500"></i> Mesej Pratonton
+      <!-- Preview Box -->
+      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-slate-700/50 space-y-3 shadow-sm">
+        <div class="flex items-center justify-between border-b border-slate-200/50 dark:border-slate-700/50 pb-2">
+          <h3 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-envelope-open-text text-sky-500"></i> Pra-lihat Mesej
           </h3>
-          <button onclick="switchTab('settings')" class="text-[11px] text-softblue-600 dark:text-softblue-400 hover:underline flex items-center gap-1">
-            <i class="fa-solid fa-gear"></i> Edit Template
+          <button onclick="switchTab('settings')" class="text-[11px] text-sky-600 dark:text-sky-400 font-semibold hover:underline flex items-center gap-1">
+            <i class="fa-solid fa-gear"></i> Edit Tetapan
           </button>
         </div>
 
-        <div id="cartMessagePreview" class="bg-white/80 dark:bg-gray-900/80 p-3.5 rounded-xl border border-gray-200/50 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-200 whitespace-pre-wrap leading-relaxed select-text shadow-inner min-h-[120px]">
-          <!-- Message text dynamically generated -->
+        <div id="cartMessagePreview" class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-slate-200/60 dark:border-slate-800 text-xs font-normal text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed select-text min-h-[120px]">
         </div>
 
-        <button onclick="copyGeneratedCartMessage()" class="w-full bg-gradient-to-r from-softblue-500 to-softpink-500 hover:from-softblue-600 hover:to-softpink-600 text-white font-bold py-3 px-4 rounded-xl shadow flex items-center justify-center gap-2 active:scale-98 transition">
+        <button onclick="copyGeneratedCartMessage()" class="w-full bg-gradient-to-r from-sky-500 to-pink-500 hover:from-sky-600 hover:to-pink-600 text-white font-bold py-3 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 active:scale-98 transition">
           <i class="fa-regular fa-copy text-sm"></i>
-          <span>SALIN MESEJ</span>
+          <span>SALIN MESEJ LENGKAP</span>
         </button>
       </div>
     </section>
 
     <!-- ==================== TAB 5: SETTINGS ==================== -->
-    <section id="tab-settings" class="tab-content space-y-4 hidden">
+    <section id="tab-settings" class="tab-content space-y-3 hidden">
       <div>
-        <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">Tetapan & Backup</h2>
-        <p class="text-xs text-gray-500 dark:text-gray-400">Konfigurasi mesej, tema dan salinan data</p>
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Tetapan & Backup</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Konfigurasi Mesej, Tema dan Salinan Data</p>
       </div>
 
-      <!-- Message Template Editor -->
-      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-gray-800 shadow-sm space-y-3">
-        <h3 class="text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-          <i class="fa-solid fa-pen-to-square text-softpink-500"></i> Template Mesej
+      <!-- Template Editor -->
+      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-slate-700/50 shadow-sm space-y-2.5">
+        <h3 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-pen-to-square text-sky-500"></i> Templat Mesej Pelanggan
         </h3>
-        <p class="text-[11px] text-gray-500 dark:text-gray-400">Gunakan tag <code class="bg-softblue-100 dark:bg-gray-800 text-softblue-700 dark:text-softblue-300 px-1 py-0.5 rounded font-mono text-[10px]">{LINKS}</code> untuk lokasi senarai pautan.</p>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">Pastikan kod <code class="bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 px-1 py-0.5 rounded font-mono text-[10px]">{LINKS}</code> wujud di dalam templat.</p>
         
-        <textarea id="templateInput" rows="6" class="w-full p-3 rounded-xl glass-card border border-gray-200/60 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-softblue-400 leading-relaxed"></textarea>
+        <textarea id="templateInput" rows="6" class="w-full p-3 rounded-xl glass-card border border-white/60 dark:border-slate-700/50 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400 leading-relaxed font-normal"></textarea>
 
-        <button onclick="saveTemplateSetting()" class="w-full bg-softblue-600 hover:bg-softblue-700 text-white font-medium py-2.5 rounded-xl text-xs shadow transition active:scale-95 flex items-center justify-center gap-1.5">
-          <i class="fa-solid fa-floppy-disk"></i> Simpan Template
+        <button onclick="saveTemplateSetting()" class="w-full bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 text-white font-semibold py-2.5 rounded-xl text-xs shadow transition active:scale-95 flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-floppy-disk"></i> Simpan Templat
         </button>
       </div>
 
-      <!-- Theme Switcher -->
-      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-gray-800 shadow-sm space-y-3">
-        <h3 class="text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-          <i class="fa-solid fa-palette text-softblue-500"></i> Mod Tampilan
+      <!-- Dark Mode -->
+      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-slate-700/50 shadow-sm space-y-2.5">
+        <h3 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-palette text-pink-500"></i> Tema Visual
         </h3>
         <div class="flex items-center justify-between">
-          <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Mod Gelap (Dark Mode)</span>
-          <button onclick="toggleDarkMode()" id="darkModeToggleBtn" class="w-11 h-6 rounded-full bg-gray-300 dark:bg-softpink-600 p-1 transition-colors relative">
-            <div id="darkModeDot" class="w-4 h-4 rounded-full bg-white transition-transform translate-x-0 dark:translate-x-5 shadow-sm"></div>
+          <span class="text-xs font-medium text-slate-700 dark:text-slate-300">Mod Gelap (Dark Mode)</span>
+          <button onclick="toggleDarkMode()" id="darkModeToggleBtn" class="w-12 h-6 rounded-full bg-slate-300 dark:bg-sky-600 p-1 transition-colors relative">
+            <div id="darkModeDot" class="w-4 h-4 rounded-full bg-white transition-transform translate-x-0 dark:translate-x-6 shadow"></div>
           </button>
         </div>
       </div>
 
       <!-- Backup & Restore -->
-      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-gray-800 shadow-sm space-y-3">
-        <h3 class="text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-          <i class="fa-solid fa-database text-softpink-500"></i> Backup & Restore Data
+      <div class="glass-card rounded-2xl p-4 border border-white/60 dark:border-slate-700/50 shadow-sm space-y-2.5">
+        <h3 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-database text-indigo-500"></i> Backup & Restore
         </h3>
-        <p class="text-[11px] text-gray-500 dark:text-gray-400">Eksport fail JSON sebagai salinan atau import fail sedia ada.</p>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">Muat turun salinan data atau muat naik fail simpanan lama.</p>
         
         <div class="grid grid-cols-2 gap-2">
-          <button onclick="exportDataBackup()" class="py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-medium shadow transition active:scale-95 flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-download"></i> Eksport JSON
+          <button onclick="exportDataBackup()" class="py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold shadow transition active:scale-95 flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-download"></i> Export JSON
           </button>
           
-          <label class="py-2.5 px-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-medium shadow transition active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer">
+          <label class="py-2.5 px-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow transition active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer text-center">
             <i class="fa-solid fa-upload"></i> Import JSON
             <input type="file" id="importFileInput" accept=".json" onchange="importDataBackup(event)" class="hidden">
           </label>
         </div>
 
-        <button onclick="manualSyncFirebase()" class="w-full mt-2 py-2.5 px-3 bg-softblue-500 hover:bg-softblue-600 text-white rounded-xl text-xs font-medium shadow transition active:scale-95 flex items-center justify-center gap-1.5">
-          <i class="fa-solid fa-cloud"></i> Sync Firebase
+        <button onclick="manualSyncFirebase()" class="w-full mt-1 py-2.5 px-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-semibold shadow transition active:scale-95 flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-cloud"></i> Sync Cloud Firebase
         </button>
       </div>
 
-      <!-- About Info -->
-      <div class="text-center py-3 text-xs text-gray-400 dark:text-gray-500 space-y-1">
-        <p class="font-bold text-gray-600 dark:text-gray-400">Scha Link Management v1.1</p>
-        <p>Aplikasi Peribadi Pengurusan Pautan Drive</p>
+      <div class="text-center py-3 text-xs text-slate-400 dark:text-slate-500 space-y-0.5">
+        <p class="font-bold text-slate-600 dark:text-slate-400">Scha Link Management v2.0 Pro</p>
+        <p class="text-[10px]">Pastel Minimalist & Modern Workflow</p>
       </div>
     </section>
 
   </main>
 
   <!-- BOTTOM NAVIGATION BAR -->
-  <nav class="fixed bottom-0 left-0 right-0 z-40 glass-card border-t border-white/60 dark:border-gray-800 px-2 py-2 shadow-lg">
+  <nav class="fixed bottom-0 left-0 right-0 z-40 glass-card border-t border-white/60 dark:border-slate-700/50 px-2 py-2 shadow-lg">
     <div class="max-w-md mx-auto grid grid-cols-5 gap-1">
       
-      <button onclick="switchTab('home')" id="nav-home" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-softblue-600 dark:text-softblue-400 font-bold transition active:scale-90">
+      <button onclick="switchTab('home')" id="nav-home" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-semibold transition active:scale-90">
         <i class="fa-solid fa-house text-base mb-0.5"></i>
         <span class="text-[10px]">Utama</span>
       </button>
 
-      <button onclick="switchTab('folders')" id="nav-folders" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-gray-400 dark:text-gray-500 font-medium transition active:scale-90">
+      <button onclick="switchTab('folders')" id="nav-folders" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-semibold transition active:scale-90">
         <i class="fa-solid fa-folder-open text-base mb-0.5"></i>
         <span class="text-[10px]">Folder</span>
       </button>
 
-      <button onclick="switchTab('products')" id="nav-products" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-gray-400 dark:text-gray-500 font-medium transition active:scale-90">
+      <button onclick="switchTab('products')" id="nav-products" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-semibold transition active:scale-90">
         <i class="fa-solid fa-boxes-stacked text-base mb-0.5"></i>
         <span class="text-[10px]">Produk</span>
       </button>
 
-      <button onclick="switchTab('cart')" id="nav-cart" class="nav-btn relative flex flex-col items-center justify-center py-1.5 rounded-xl text-gray-400 dark:text-gray-500 font-medium transition active:scale-90">
+      <button onclick="switchTab('cart')" id="nav-cart" class="nav-btn relative flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-semibold transition active:scale-90">
         <i class="fa-solid fa-cart-shopping text-base mb-0.5"></i>
-        <span class="text-[10px]">Cart</span>
-        <span id="navCartBadge" class="absolute top-1 right-3 bg-softpink-500 text-white font-bold text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center">0</span>
+        <span class="text-[10px]">Troli</span>
+        <span id="navCartBadge" class="absolute top-1 right-3 bg-pink-500 text-white font-bold text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
       </button>
 
-      <button onclick="switchTab('settings')" id="nav-settings" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-gray-400 dark:text-gray-500 font-medium transition active:scale-90">
+      <button onclick="switchTab('settings')" id="nav-settings" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-semibold transition active:scale-90">
         <i class="fa-solid fa-sliders text-base mb-0.5"></i>
         <span class="text-[10px]">Tetapan</span>
       </button>
@@ -430,12 +422,12 @@
 
   <!-- ==================== MODALS ==================== -->
 
-  <!-- Modal: Folder Add/Edit -->
-  <div id="folderModal" class="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
-    <div class="glass-card bg-white dark:bg-gray-900 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-gray-800 shadow-2xl space-y-4">
-      <div class="flex items-center justify-between border-b border-gray-200/60 dark:border-gray-800 pb-2">
-        <h3 id="folderModalTitle" class="text-base font-bold text-gray-800 dark:text-gray-100">Tambah Folder Baru</h3>
-        <button onclick="closeFolderModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+  <!-- Modal Folder -->
+  <div id="folderModal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
+    <div class="glass-card bg-white/95 dark:bg-slate-900/95 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-slate-700/50 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800 pb-2">
+        <h3 id="folderModalTitle" class="text-sm font-bold text-slate-800 dark:text-white tracking-tight">Tambah Folder Baru</h3>
+        <button onclick="closeFolderModal()" class="text-slate-400 hover:text-slate-600">
           <i class="fa-solid fa-xmark text-base"></i>
         </button>
       </div>
@@ -443,24 +435,24 @@
       <input type="hidden" id="folderEditId">
       
       <div>
-        <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Nama Folder</label>
+        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Folder</label>
         <input type="text" id="folderNameInput" placeholder="Contoh: Sekolah Rendah" 
-               class="w-full px-3.5 py-2 rounded-xl glass-card border border-gray-200 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-softblue-400">
+               class="w-full px-3.5 py-2.5 rounded-xl glass-card border border-slate-200/80 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400">
       </div>
 
       <div class="flex gap-2 pt-2">
-        <button onclick="closeFolderModal()" class="flex-1 py-2 rounded-xl border border-gray-300 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300">Batal</button>
-        <button onclick="saveFolder()" class="flex-1 py-2 rounded-xl bg-softblue-600 hover:bg-softblue-700 text-white text-xs font-medium shadow">Simpan</button>
+        <button onclick="closeFolderModal()" class="flex-1 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300">Batal</button>
+        <button onclick="saveFolder()" class="flex-1 py-2.5 rounded-xl bg-slate-900 dark:bg-sky-500 text-white text-xs font-semibold shadow">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- Modal: Product Add/Edit -->
-  <div id="productModal" class="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
-    <div class="glass-card bg-white dark:bg-gray-900 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-gray-800 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-      <div class="flex items-center justify-between border-b border-gray-200/60 dark:border-gray-800 pb-2">
-        <h3 id="productModalTitle" class="text-base font-bold text-gray-800 dark:text-gray-100">Tambah Produk Baru</h3>
-        <button onclick="closeProductModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+  <!-- Modal Product -->
+  <div id="productModal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
+    <div class="glass-card bg-white/95 dark:bg-slate-900/95 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-slate-700/50 shadow-2xl space-y-3.5 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800 pb-2">
+        <h3 id="productModalTitle" class="text-sm font-bold text-slate-800 dark:text-white tracking-tight">Tambah Produk Baru</h3>
+        <button onclick="closeProductModal()" class="text-slate-400 hover:text-slate-600">
           <i class="fa-solid fa-xmark text-base"></i>
         </button>
       </div>
@@ -468,104 +460,101 @@
       <input type="hidden" id="productEditId">
 
       <div>
-        <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Pilih Folder <span class="text-rose-500">*</span></label>
-        <select id="productFolderSelect" class="w-full px-3 py-2 rounded-xl glass-card border border-gray-200 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-softblue-400">
-          <!-- Folder options -->
+        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Pilih Folder <span class="text-rose-500">*</span></label>
+        <select id="productFolderSelect" class="w-full px-3 py-2.5 rounded-xl glass-card border border-slate-200/80 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400">
         </select>
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Nama Produk <span class="text-rose-500">*</span></label>
+        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Produk <span class="text-rose-500">*</span></label>
         <input type="text" id="productNameInput" placeholder="Contoh: Membaca Suku Kata" 
-               class="w-full px-3.5 py-2 rounded-xl glass-card border border-gray-200 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-softblue-400">
+               class="w-full px-3.5 py-2.5 rounded-xl glass-card border border-slate-200/80 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400">
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Pautan URL <span class="text-rose-500">*</span></label>
+        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Pautan URL (Google Drive) <span class="text-rose-500">*</span></label>
         <input type="url" id="productLinkInput" placeholder="https://drive.google.com/..." 
-               class="w-full px-3.5 py-2 rounded-xl glass-card border border-gray-200 dark:border-gray-800 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-softblue-400">
+               class="w-full px-3.5 py-2.5 rounded-xl glass-card border border-slate-200/80 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400">
       </div>
 
       <div class="flex gap-2 pt-2">
-        <button onclick="closeProductModal()" class="flex-1 py-2 rounded-xl border border-gray-300 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300">Batal</button>
-        <button onclick="saveProduct()" class="flex-1 py-2 rounded-xl bg-softpink-600 hover:bg-softpink-700 text-white text-xs font-medium shadow">Simpan</button>
+        <button onclick="closeProductModal()" class="flex-1 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300">Batal</button>
+        <button onclick="saveProduct()" class="flex-1 py-2.5 rounded-xl bg-slate-900 dark:bg-pink-500 text-white text-xs font-semibold shadow">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- Modal: Product Details View -->
-  <div id="productDetailModal" class="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
-    <div class="glass-card bg-white dark:bg-gray-900 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-gray-800 shadow-2xl space-y-4">
-      <div class="flex items-start justify-between border-b border-gray-200/60 dark:border-gray-800 pb-2">
+  <!-- Modal Detail -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
+    <div class="glass-card bg-white/95 dark:bg-slate-900/95 rounded-3xl max-w-sm w-full p-5 border border-white/60 dark:border-slate-700/50 shadow-2xl space-y-3.5">
+      <div class="flex items-start justify-between border-b border-slate-200/60 dark:border-slate-800 pb-2">
         <div>
-          <span id="detailFolderBadge" class="text-[10px] font-bold uppercase tracking-wider text-softblue-600 bg-softblue-50 dark:bg-gray-800 dark:text-softblue-300 px-2 py-0.5 rounded-full">Nama Folder</span>
-          <h3 id="detailProductName" class="text-base font-bold text-gray-800 dark:text-white mt-1">Nama Produk</h3>
+          <span id="detailFolderBadge" class="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-100 dark:bg-sky-950 dark:text-sky-300 px-2.5 py-0.5 rounded-full">Folder</span>
+          <h3 id="detailProductName" class="text-base font-bold text-slate-800 dark:text-white mt-1">Nama Produk</h3>
         </div>
-        <button onclick="closeProductDetailModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+        <button onclick="closeProductDetailModal()" class="text-slate-400 hover:text-slate-600">
           <i class="fa-solid fa-xmark text-base"></i>
         </button>
       </div>
 
       <div class="space-y-2 text-xs">
         <div>
-          <span class="text-gray-400 dark:text-gray-500 font-medium">Pautan Sasaran:</span>
-          <p id="detailProductLink" class="text-softblue-700 dark:text-softblue-300 break-all font-mono text-[11px] bg-softblue-50/50 dark:bg-gray-800 p-2 rounded-lg mt-0.5 border border-softblue-100 dark:border-gray-700">https://...</p>
+          <span class="text-slate-400 font-medium text-[11px]">Pautan sasaran:</span>
+          <p id="detailProductLink" class="text-sky-600 dark:text-sky-400 break-all font-mono text-[11px] bg-slate-100 dark:bg-slate-800/80 p-2.5 rounded-xl mt-1 border border-slate-200/60 dark:border-slate-700">https://...</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 pt-1">
+        <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-500 dark:text-slate-400 pt-1">
           <div>
             <span>Dicipta:</span>
-            <p id="detailCreatedDate" class="font-semibold text-gray-700 dark:text-gray-300">-</p>
+            <p id="detailCreatedDate" class="font-semibold text-slate-700 dark:text-slate-200">-</p>
           </div>
           <div>
             <span>Dikemaskini:</span>
-            <p id="detailUpdatedDate" class="font-semibold text-gray-700 dark:text-gray-300">-</p>
+            <p id="detailUpdatedDate" class="font-semibold text-slate-700 dark:text-slate-200">-</p>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-2 pt-2">
-        <button id="detailCopyBtn" class="py-2 px-3 bg-softblue-50 dark:bg-gray-800 hover:bg-softblue-100 text-softblue-700 dark:text-softblue-300 rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition">
-          <i class="fa-regular fa-copy"></i> Salin Pautan
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <button id="detailCopyBtn" class="py-2.5 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-800 dark:text-slate-200 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+          <i class="fa-regular fa-copy"></i> Salin Link
         </button>
-        <button id="detailCartBtn" class="py-2 px-3 bg-softpink-600 hover:bg-softpink-700 text-white rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 shadow transition">
-          <i class="fa-solid fa-cart-plus"></i> Tambah Cart
+        <button id="detailCartBtn" class="py-2.5 px-3 bg-pink-500 hover:bg-pink-600 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 shadow transition">
+          <i class="fa-solid fa-cart-plus"></i> Tambah Troli
         </button>
       </div>
 
-      <div class="flex justify-between items-center pt-2 border-t border-gray-100 dark:border-gray-800">
-        <button id="detailEditBtn" class="text-xs text-amber-600 dark:text-amber-400 font-medium flex items-center gap-1">
+      <div class="flex justify-between items-center pt-2 border-t border-slate-100 dark:border-slate-800">
+        <button id="detailEditBtn" class="text-xs text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
           <i class="fa-solid fa-pen"></i> Edit
         </button>
-        <button id="detailDeleteBtn" class="text-xs text-rose-600 dark:text-rose-400 font-medium flex items-center gap-1">
+        <button id="detailDeleteBtn" class="text-xs text-rose-600 dark:text-rose-400 font-semibold flex items-center gap-1">
           <i class="fa-solid fa-trash-can"></i> Padam
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Modal: Confirmation Dialog -->
-  <div id="confirmModal" class="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
-    <div class="glass-card bg-white dark:bg-gray-900 rounded-3xl max-w-xs w-full p-5 border border-white/60 dark:border-gray-800 shadow-2xl text-center space-y-3">
-      <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center mx-auto text-lg">
+  <!-- Modal Confirmation -->
+  <div id="confirmModal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 animate__animated animate__fadeIn animate__faster">
+    <div class="glass-card bg-white/95 dark:bg-slate-900/95 rounded-3xl max-w-xs w-full p-5 border border-white/60 dark:border-slate-700/50 shadow-2xl text-center space-y-3">
+      <div class="w-11 h-11 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center mx-auto text-lg">
         <i class="fa-solid fa-triangle-exclamation"></i>
       </div>
-      <h3 id="confirmTitle" class="text-sm font-bold text-gray-800 dark:text-white">Pengesahan</h3>
-      <p id="confirmMessage" class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">Adakah anda pasti?</p>
+      <h3 id="confirmTitle" class="text-sm font-bold text-slate-800 dark:text-white">Pengesahan</h3>
+      <p id="confirmMessage" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Adakah anda pasti?</p>
 
-      <div class="flex gap-2 pt-2">
-        <button onclick="closeConfirmModal(false)" class="flex-1 py-2 rounded-xl border border-gray-300 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300">Batal</button>
-        <button id="confirmOkBtn" class="flex-1 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-medium shadow">Padam</button>
+      <div class="flex gap-2 pt-1">
+        <button onclick="closeConfirmModal(false)" class="flex-1 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300">Batal</button>
+        <button id="confirmOkBtn" class="flex-1 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow">Padam</button>
       </div>
     </div>
   </div>
 
 
-  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <!-- ==================== LOGIK JAVASCRIPT ==================== -->
   <script>
-    /* -------------------------------------------------------------
-       1. FIREBASE INITIALIZATION
-    ------------------------------------------------------------- */
+    /* FIREBASE CONFIG */
     const firebaseConfig = {
       apiKey: "AIzaSyBVhvZVWfg9LuF6Auars7JenPSmwZepsiQ",
       authDomain: "pengurusan-link-c696b.firebaseapp.com",
@@ -586,52 +575,35 @@
       console.warn("Firebase Init fallback:", e);
     }
 
-    /* -------------------------------------------------------------
-       2. CONSTANTS & DEFAULT STATE
-    ------------------------------------------------------------- */
-    const DEFAULT_TEMPLATE = `Terima Kasih kerana sudah buat pembelian dengan saya. Ini link anda 👇\n\n{LINKS}\n\nNota penting: Link ini adalah untuk kegunaan sendiri sahaja. Dilarang sama sekali berkongsi link ini dengan orang lain. Saya sangat hargai anda boleh amanah dengan pesanan ini 😊\nTerima Kasih`;
+    const DEFAULT_TEMPLATE = `Terima Kasih kerana sudah membuat pembelian. Berikut adalah pautan anda 👇\n\n{LINKS}\n\nNota penting: Pautan ini adalah untuk kegunaan sendiri sahaja. Dilarang sama sekali berkongsi pautan ini dengan orang lain. Terima kasih atas kerjasama anda 😊`;
 
     const DEFAULT_FOLDERS = [
-      { id: "f-prasekolah", name: "Prasekolah", isDefault: true },
-      { id: "f-sek-rendah", name: "Sekolah Rendah", isDefault: true },
-      { id: "f-sek-menengah", name: "Sekolah Menengah", isDefault: true },
-      { id: "f-bundle", name: "Bundle", isDefault: true },
-      { id: "f-apps", name: "Apps", isDefault: true }
+      { id: "f-prasekolah", name: "Prasekolah" },
+      { id: "f-sek-rendah", name: "Sekolah Rendah" },
+      { id: "f-sek-menengah", name: "Sekolah Menengah" },
+      { id: "f-bundle", name: "Bundle" },
+      { id: "f-apps", name: "Apps" }
     ];
 
     const DEFAULT_PRODUCTS = [
       {
         id: "p-3m",
         folderId: "f-prasekolah",
-        name: "3M",
+        name: "3M Prasekolah",
         link: "https://drive.google.com/drive/folders/sample-3m-worksheet",
-        isSample: true,
         createdDate: new Date().toLocaleDateString('ms-MY'),
         updatedDate: new Date().toLocaleDateString('ms-MY')
       },
       {
         id: "p-membaca",
         folderId: "f-prasekolah",
-        name: "Membaca",
+        name: "Latihan Membaca",
         link: "https://drive.google.com/drive/folders/sample-membaca-worksheet",
-        isSample: true,
-        createdDate: new Date().toLocaleDateString('ms-MY'),
-        updatedDate: new Date().toLocaleDateString('ms-MY')
-      },
-      {
-        id: "p-suku-kata",
-        folderId: "f-prasekolah",
-        name: "Suku Kata",
-        link: "https://drive.google.com/drive/folders/sample-sukukata-worksheet",
-        isSample: true,
         createdDate: new Date().toLocaleDateString('ms-MY'),
         updatedDate: new Date().toLocaleDateString('ms-MY')
       }
     ];
 
-    /* -------------------------------------------------------------
-       3. APP STATE
-    ------------------------------------------------------------- */
     let appState = {
       activeTab: 'home',
       selectedFolderFilter: 'ALL',
@@ -646,22 +618,10 @@
 
     let confirmCallback = null;
 
-    /* -------------------------------------------------------------
-       4. INITIALIZATION
-    ------------------------------------------------------------- */
     window.addEventListener('DOMContentLoaded', () => {
       loadStateFromStorage();
       setupDarkModeUI();
       renderAll();
-
-      if (firebaseDb) {
-        firebaseDb.ref('scha_app_data').on('value', (snapshot) => {
-          const remoteData = snapshot.val();
-          if (remoteData && remoteData.folders && remoteData.products) {
-            // Background sync ready
-          }
-        });
-      }
     });
 
     function saveStateToStorage() {
@@ -687,17 +647,10 @@
         saveStateToStorage();
       }
 
-      if (!appState.folders || appState.folders.length === 0) {
-        appState.folders = [...DEFAULT_FOLDERS];
-      }
-      if (!appState.messageTemplate) {
-        appState.messageTemplate = DEFAULT_TEMPLATE;
-      }
+      if (!appState.folders || appState.folders.length === 0) appState.folders = [...DEFAULT_FOLDERS];
+      if (!appState.messageTemplate) appState.messageTemplate = DEFAULT_TEMPLATE;
     }
 
-    /* -------------------------------------------------------------
-       5. RENDER SYSTEM
-    ------------------------------------------------------------- */
     function renderAll() {
       renderNavigation();
       renderDashboard();
@@ -708,9 +661,6 @@
       renderSettings();
     }
 
-    /* -------------------------------------------------------------
-       6. NAVIGATION & TAB SWITCHING
-    ------------------------------------------------------------- */
     function switchTab(tabId) {
       appState.activeTab = tabId;
       saveStateToStorage();
@@ -721,18 +671,16 @@
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       
       const activeEl = document.getElementById(`tab-${appState.activeTab}`);
-      if (activeEl) {
-        activeEl.classList.remove('hidden');
-      }
+      if (activeEl) activeEl.classList.remove('hidden');
 
       const tabs = ['home', 'folders', 'products', 'cart', 'settings'];
       tabs.forEach(t => {
         const btn = document.getElementById(`nav-${t}`);
         if (btn) {
           if (t === appState.activeTab) {
-            btn.className = "nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-softpink-600 dark:text-softpink-300 font-bold bg-white/70 dark:bg-gray-800/80 transition scale-105 shadow-sm border border-white/50 dark:border-gray-700";
+            btn.className = "nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-sky-600 dark:text-sky-400 font-bold bg-white/80 dark:bg-slate-800/80 shadow-sm transition scale-105";
           } else {
-            btn.className = "nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-gray-400 dark:text-gray-500 font-medium transition hover:text-softblue-500";
+            btn.className = "nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-400 font-medium hover:text-slate-600 dark:hover:text-slate-200 transition";
           }
         }
       });
@@ -740,9 +688,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* -------------------------------------------------------------
-       7. DASHBOARD METRICS
-    ------------------------------------------------------------- */
     function renderDashboard() {
       document.getElementById('dashTotalFolders').innerText = appState.folders.length;
       document.getElementById('dashTotalProducts').innerText = appState.products.length;
@@ -750,18 +695,15 @@
       document.getElementById('dashTotalCart').innerText = appState.cartProductIds.length;
     }
 
-    /* -------------------------------------------------------------
-       8. FOLDER MANAGEMENT
-    ------------------------------------------------------------- */
     function renderFolders() {
       const container = document.getElementById('folderList');
       if (!container) return;
 
       if (appState.folders.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-8 glass-card rounded-2xl border border-white/60 dark:border-gray-800">
-            <p class="text-xs text-gray-500">Tiada folder ditemui.</p>
-            <button onclick="openFolderModal()" class="mt-2 text-xs text-softblue-600 font-bold">+ Tambah Folder</button>
+          <div class="text-center py-8 glass-card rounded-2xl border border-white/60 dark:border-slate-700/50">
+            <p class="text-xs text-slate-500">Tiada folder ditemui.</p>
+            <button onclick="openFolderModal()" class="mt-2 text-xs text-sky-600 font-bold">+ Tambah Folder</button>
           </div>`;
         return;
       }
@@ -769,21 +711,21 @@
       container.innerHTML = appState.folders.map(f => {
         const productCount = appState.products.filter(p => p.folderId === f.id).length;
         return `
-          <div class="glass-card rounded-2xl p-3 border border-white/60 dark:border-gray-800 shadow-sm flex items-center justify-between">
+          <div class="glass-card rounded-2xl p-3.5 border border-white/60 dark:border-slate-700/50 shadow-sm flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-xl bg-softblue-100 dark:bg-softblue-950 text-softblue-600 dark:text-softblue-300 flex items-center justify-center text-base font-bold">
-                📁
+              <div class="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center text-sm font-bold">
+                <i class="fa-solid fa-folder"></i>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-gray-800 dark:text-gray-100">${escapeHtml(f.name)}</h4>
-                <p class="text-[10px] text-gray-400 dark:text-gray-500">${productCount} produk</p>
+                <h4 class="text-xs font-bold text-slate-800 dark:text-slate-100">${escapeHtml(f.name)}</h4>
+                <p class="text-[10px] text-slate-400 font-medium">${productCount} produk</p>
               </div>
             </div>
             <div class="flex items-center gap-1">
-              <button onclick="openFolderModal('${f.id}')" class="p-1.5 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg text-xs">
+              <button onclick="openFolderModal('${f.id}')" class="p-2 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg text-xs">
                 <i class="fa-solid fa-pen"></i>
               </button>
-              <button onclick="confirmDeleteFolder('${f.id}')" class="p-1.5 text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg text-xs">
+              <button onclick="confirmDeleteFolder('${f.id}')" class="p-2 text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg text-xs">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </div>
@@ -830,13 +772,9 @@
       if (editId) {
         const folder = appState.folders.find(f => f.id === editId);
         if (folder) folder.name = nameInput;
-        showToast("Folder dikemaskini.");
+        showToast("Folder berjaya dikemaskini.");
       } else {
-        const newFolder = {
-          id: 'f-' + Date.now(),
-          name: nameInput
-        };
-        appState.folders.push(newFolder);
+        appState.folders.push({ id: 'f-' + Date.now(), name: nameInput });
         showToast("Folder baru ditambah.");
       }
 
@@ -852,7 +790,7 @@
       const affectedProducts = appState.products.filter(p => p.folderId === folderId);
       let warningMsg = `Padam folder "${folder.name}"?`;
       if (affectedProducts.length > 0) {
-        warningMsg += ` ${affectedProducts.length} produk dalam folder ini juga akan dipadam!`;
+        warningMsg += ` Amaran: ${affectedProducts.length} produk di dalam folder ini juga akan dipadam!`;
       }
 
       openConfirmModal("Padam Folder", warningMsg, () => {
@@ -861,9 +799,7 @@
         appState.products = appState.products.filter(p => p.folderId !== folderId);
         appState.cartProductIds = appState.cartProductIds.filter(id => !deletedProductIds.includes(id));
 
-        if (appState.selectedFolderFilter === folderId) {
-          appState.selectedFolderFilter = 'ALL';
-        }
+        if (appState.selectedFolderFilter === folderId) appState.selectedFolderFilter = 'ALL';
 
         saveStateToStorage();
         renderAll();
@@ -871,9 +807,6 @@
       });
     }
 
-    /* -------------------------------------------------------------
-       9. PRODUCT MANAGEMENT & SEARCH
-    ------------------------------------------------------------- */
     function renderFilters() {
       const folderSelect = document.getElementById('filterFolderSelect');
       const productSelect = document.getElementById('filterProductSelect');
@@ -954,10 +887,9 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-8 glass-card rounded-2xl border border-white/60 dark:border-gray-800 p-5 space-y-2">
-            <span class="text-2xl">📑</span>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Tiada produk ditemui.</p>
-            <button onclick="openProductModal()" class="bg-softpink-500 hover:bg-softpink-600 text-white font-medium text-xs py-1.5 px-3 rounded-xl shadow transition">
+          <div class="text-center py-8 glass-card rounded-2xl border border-white/60 dark:border-slate-700/50 p-5 space-y-2">
+            <p class="text-xs text-slate-500 font-medium">Tiada produk ditemui.</p>
+            <button onclick="openProductModal()" class="bg-slate-900 dark:bg-pink-500 text-white font-semibold text-xs py-2 px-3.5 rounded-xl shadow transition">
               + Tambah Produk
             </button>
           </div>
@@ -971,33 +903,35 @@
         const inCart = appState.cartProductIds.includes(p.id);
 
         return `
-          <div class="glass-card rounded-2xl p-3.5 border border-white/60 dark:border-gray-800 shadow-sm space-y-2 transition hover:shadow-md">
+          <div class="glass-card rounded-2xl p-3.5 border border-white/60 dark:border-slate-700/50 shadow-sm space-y-2 transition hover:shadow-md">
             <div class="flex items-start justify-between cursor-pointer" onclick="openProductDetailModal('${p.id}')">
               <div class="flex items-center gap-2.5">
-                <span class="text-lg">📚</span>
+                <div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-600 flex items-center justify-center text-xs font-bold">
+                  <i class="fa-solid fa-box"></i>
+                </div>
                 <div>
-                  <h4 class="text-xs font-bold text-gray-800 dark:text-gray-100">${escapeHtml(p.name)} ${p.isSample ? '<span class="text-[9px] bg-softblue-100 text-softblue-700 px-1 py-0.2 rounded ml-1">Contoh</span>' : ''}</h4>
-                  <p class="text-[10px] text-softpink-600 dark:text-softpink-400 font-semibold">${escapeHtml(folderName)}</p>
+                  <h4 class="text-xs font-bold text-slate-800 dark:text-slate-100 hover:text-sky-600 transition">${escapeHtml(p.name)}</h4>
+                  <p class="text-[10px] text-sky-600 dark:text-sky-400 font-semibold">${escapeHtml(folderName)}</p>
                 </div>
               </div>
-              <span class="text-[9px] text-gray-400 dark:text-gray-500 bg-white/60 dark:bg-gray-800 px-2 py-0.5 rounded-md border border-gray-200/50 dark:border-gray-700 font-mono">Drive Link</span>
+              <span class="text-[9px] text-slate-400 bg-white/80 dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 font-mono">Google Drive</span>
             </div>
 
-            <div class="grid grid-cols-2 gap-2 pt-1 border-t border-gray-200/50 dark:border-gray-800">
-              <button onclick="copyIndividualLink('${escapeJsString(p.link)}')" class="py-1.5 px-2 bg-softblue-50 dark:bg-gray-800 hover:bg-softblue-100 text-softblue-700 dark:text-softblue-300 rounded-xl text-xs font-medium flex items-center justify-center gap-1 transition active:scale-95">
+            <div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-200/50 dark:border-slate-800">
+              <button onclick="copyIndividualLink('${escapeJsString(p.link)}')" class="py-2 px-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition active:scale-95">
                 <i class="fa-regular fa-copy"></i> Salin Link
               </button>
 
-              <button onclick="addToCart('${p.id}')" class="py-1.5 px-2 ${inCart ? 'bg-emerald-600 text-white' : 'bg-softpink-500 hover:bg-softpink-600 text-white'} rounded-xl text-xs font-medium flex items-center justify-center gap-1 shadow transition active:scale-95">
-                <i class="fa-solid ${inCart ? 'fa-check' : 'fa-cart-plus'}"></i> ${inCart ? 'Ada di Cart' : '🛒 Tambah'}
+              <button onclick="addToCart('${p.id}')" class="py-2 px-2.5 ${inCart ? 'bg-emerald-600 text-white' : 'bg-slate-900 dark:bg-pink-500 text-white'} rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 shadow transition active:scale-95">
+                <i class="fa-solid ${inCart ? 'fa-check' : 'fa-cart-plus'}"></i> ${inCart ? 'Dalam Troli' : 'Tambah'}
               </button>
             </div>
 
-            <div class="flex justify-end gap-3 text-[11px] pt-1">
-              <button onclick="openProductModal('${p.id}')" class="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+            <div class="flex justify-end gap-3 text-xs pt-0.5">
+              <button onclick="openProductModal('${p.id}')" class="text-amber-600 dark:text-amber-400 hover:underline font-semibold flex items-center gap-1 text-[11px]">
                 <i class="fa-solid fa-pen text-[9px]"></i> Edit
               </button>
-              <button onclick="confirmDeleteProduct('${p.id}')" class="text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1">
+              <button onclick="confirmDeleteProduct('${p.id}')" class="text-rose-600 dark:text-rose-400 hover:underline font-semibold flex items-center gap-1 text-[11px]">
                 <i class="fa-solid fa-trash-can text-[9px]"></i> Padam
               </button>
             </div>
@@ -1060,15 +994,15 @@
       const link = document.getElementById('productLinkInput').value.trim();
 
       if (!name) {
-        showToast("Sila masukkan nama produk.", "fa-triangle-exclamation");
+        showToast("Masukkan nama produk.", "fa-triangle-exclamation");
         return;
       }
       if (!link) {
-        showToast("Sila masukkan pautan URL.", "fa-triangle-exclamation");
+        showToast("Masukkan pautan link.", "fa-triangle-exclamation");
         return;
       }
       if (!isValidUrl(link)) {
-        showToast("Sila masukkan pautan URL yang sah.", "fa-triangle-exclamation");
+        showToast("Format URL pautan tidak sah.", "fa-triangle-exclamation");
         return;
       }
 
@@ -1082,18 +1016,17 @@
           p.link = link;
           p.updatedDate = currentDate;
         }
-        showToast("Produk dikemaskini.");
+        showToast("Produk berjaya dikemaskini.");
       } else {
-        const newProduct = {
+        appState.products.push({
           id: 'p-' + Date.now(),
           folderId: folderId,
           name: name,
           link: link,
           createdDate: currentDate,
           updatedDate: currentDate
-        };
-        appState.products.push(newProduct);
-        showToast("Produk baru ditambah!");
+        });
+        showToast("Produk ditambah!");
       }
 
       saveStateToStorage();
@@ -1138,12 +1071,9 @@
       document.getElementById('productDetailModal').classList.add('hidden');
     }
 
-    /* -------------------------------------------------------------
-       10. CART & MESSAGE BUILDER
-    ------------------------------------------------------------- */
     function addToCart(productId) {
       if (appState.cartProductIds.includes(productId)) {
-        showToast("Produk ini sudah ada dalam Cart.", "fa-circle-info");
+        showToast("Produk sudah ada dalam troli.", "fa-circle-info");
         return;
       }
 
@@ -1152,7 +1082,7 @@
       renderDashboard();
       renderCart();
       renderProducts();
-      showToast("Ditambah ke Cart 🛒");
+      showToast("Ditambah ke troli!");
     }
 
     function removeFromCart(productId) {
@@ -1161,22 +1091,22 @@
       renderDashboard();
       renderCart();
       renderProducts();
-      showToast("Dikeluarkan dari Cart");
+      showToast("Dikeluarkan dari troli.");
     }
 
     function confirmClearCart() {
       if (appState.cartProductIds.length === 0) {
-        showToast("Cart memang kosong.", "fa-circle-info");
+        showToast("Troli sudah kosong.", "fa-circle-info");
         return;
       }
 
-      openConfirmModal("Kosongkan Cart", "Kosongkan semua pautan dalam Cart?", () => {
+      openConfirmModal("Kosongkan Troli", "Padam semua pautan dalam troli?", () => {
         appState.cartProductIds = [];
         saveStateToStorage();
         renderDashboard();
         renderCart();
         renderProducts();
-        showToast("Cart dikosongkan.");
+        showToast("Troli dikosongkan.");
       });
     }
 
@@ -1193,12 +1123,11 @@
 
       if (count === 0) {
         listContainer.innerHTML = `
-          <div class="text-center py-5 glass-card rounded-2xl border border-white/60 dark:border-gray-800">
-            <span class="text-xl">🛍️</span>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Cart masih kosong.</p>
+          <div class="text-center py-6 glass-card rounded-2xl border border-white/60 dark:border-slate-700/50">
+            <p class="text-xs text-slate-500 font-medium">Troli masih kosong.</p>
           </div>
         `;
-        previewBox.innerText = appState.messageTemplate.replace('{LINKS}', '[Senarai pautan akan terpapar di sini]');
+        previewBox.innerText = appState.messageTemplate.replace('{LINKS}', '[Pautan produk akan terpapar di sini]');
         return;
       }
 
@@ -1207,19 +1136,19 @@
         .filter(Boolean);
 
       listContainer.innerHTML = cartProducts.map((p, idx) => `
-        <div class="glass-card rounded-xl p-2 border border-white/60 dark:border-gray-800 shadow-sm flex items-center justify-between gap-2">
+        <div class="glass-card rounded-xl p-2.5 border border-white/60 dark:border-slate-700/50 shadow-sm flex items-center justify-between gap-2">
           <div class="flex items-center gap-2 overflow-hidden">
-            <span class="text-xs font-bold text-softpink-500 w-4">${idx + 1}.</span>
+            <span class="text-xs font-bold text-sky-600 w-4">${idx + 1}.</span>
             <div class="truncate">
-              <h5 class="text-xs font-bold text-gray-800 dark:text-gray-100 truncate">${escapeHtml(p.name)}</h5>
-              <p class="text-[10px] text-softblue-600 dark:text-softblue-400 font-mono truncate">${escapeHtml(p.link)}</p>
+              <h5 class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">${escapeHtml(p.name)}</h5>
+              <p class="text-[10px] text-sky-600 dark:text-sky-400 font-mono truncate">${escapeHtml(p.link)}</p>
             </div>
           </div>
           <div class="flex items-center gap-1 shrink-0">
-            <button onclick="copyIndividualLink('${escapeJsString(p.link)}')" title="Salin Link" class="p-1 text-softblue-600 hover:bg-softblue-50 rounded text-xs">
+            <button onclick="copyIndividualLink('${escapeJsString(p.link)}')" title="Salin Link" class="p-1.5 text-slate-600 hover:bg-slate-100 rounded-lg text-xs">
               <i class="fa-regular fa-copy"></i>
             </button>
-            <button onclick="removeFromCart('${p.id}')" title="Buang" class="p-1 text-rose-500 hover:bg-rose-50 rounded text-xs">
+            <button onclick="removeFromCart('${p.id}')" title="Buang" class="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg text-xs">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -1238,12 +1167,12 @@
 
       const textToCopy = previewBox.innerText;
       if (!textToCopy || appState.cartProductIds.length === 0) {
-        showToast("Sila tambah produk ke Cart dahulu.", "fa-triangle-exclamation");
+        showToast("Tambah produk ke troli dahulu.", "fa-triangle-exclamation");
         return;
       }
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Mesej berjaya disalin!");
+        showToast("Mesej disalin! Sedia dihantar. 📋");
       }).catch(err => {
         showToast("Gagal menyalin mesej.", "fa-triangle-exclamation");
       });
@@ -1257,9 +1186,6 @@
       });
     }
 
-    /* -------------------------------------------------------------
-       11. SETTINGS & BACKUP
-    ------------------------------------------------------------- */
     function renderSettings() {
       const templateInput = document.getElementById('templateInput');
       if (templateInput) {
@@ -1277,7 +1203,7 @@
       appState.messageTemplate = val;
       saveStateToStorage();
       renderCart();
-      showToast("Template mesej disimpan.");
+      showToast("Templat mesej disimpan.");
     }
 
     function setupDarkModeUI() {
@@ -1297,7 +1223,7 @@
     function exportDataBackup() {
       const backupData = {
         app: "Scha Link Management",
-        version: "1.1",
+        version: "2.0",
         exportDate: new Date().toISOString(),
         data: appState
       };
@@ -1310,14 +1236,14 @@
       downloadAnchor.click();
       downloadAnchor.remove();
 
-      showToast("Fail backup dieksport.");
+      showToast("Backup dieksport.");
     }
 
     function importDataBackup(event) {
       const file = event.target.files[0];
       if (!file) return;
 
-      openConfirmModal("Import Backup", "Overwrite data sedia ada dengan fail backup ini?", () => {
+      openConfirmModal("Import Backup", "Adakah anda pasti mahu ganti semua data sedia ada?", () => {
         const reader = new FileReader();
         reader.onload = function(e) {
           try {
@@ -1329,7 +1255,7 @@
               renderAll();
               showToast("Data berjaya di-restore!");
             } else {
-              showToast("Format fail backup tidak sah.", "fa-triangle-exclamation");
+              showToast("Format fail tidak sah.", "fa-triangle-exclamation");
             }
           } catch (err) {
             showToast("Ralat membaca fail JSON.", "fa-triangle-exclamation");
@@ -1351,22 +1277,19 @@
         messageTemplate: appState.messageTemplate,
         lastSynced: new Date().toISOString()
       }).then(() => {
-        showToast("Data berjaya di-sync ke Cloud ☁️");
+        showToast("Data di-sync ke Firebase ☁️");
       }).catch(err => {
         showToast("Gagal sync ke Firebase.", "fa-triangle-exclamation");
       });
     }
 
-    /* -------------------------------------------------------------
-       12. UTILITY & DIALOGS
-    ------------------------------------------------------------- */
     function showToast(msg, icon = "fa-circle-check") {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toastMsg');
       const toastIcon = document.getElementById('toastIcon');
 
       toastMsg.innerText = msg;
-      toastIcon.className = `fa-solid ${icon} text-softblue-300`;
+      toastIcon.className = `fa-solid ${icon} text-sky-400`;
 
       toast.classList.remove('hidden');
       setTimeout(() => {
